@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Leading with Patient Centricity | CHAI × IIM Kozhikode</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-mid:#2C3E6B;--navy-light:#EEF1F8;
+  --gold:#B8860B;--gold-light:#F7F0DC;--gold-mid:#D4A017;
+  --cream:#FDFBF6;--cream2:#F5F1E8;--cream3:#EDE7D4;
+  --text:#1C1C2E;--text2:#4A4A5E;--text3:#7A7A8E;
+  --white:#FFFFFF;--border:#DDD8C8;--border2:#C8C2B0;
+  --red:#8B1A1A;--r:10px;--r-sm:6px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text);line-height:1.75;font-size:16px}
+
+/* ── HERO (mobile-first) ────────── */
+.hero{background:var(--navy);color:white;position:relative;overflow:hidden}
+.hero-watermark{position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Lora',serif;font-size:120px;font-weight:600;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;white-space:nowrap;letter-spacing:-3px}
+.hero-accent-line{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold-mid)}
+.hero-inner{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:40px 20px 36px}
+.hero-top-row{display:flex;flex-direction:column;gap:28px}
+.hero-right{display:none}
+.hero-event-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
+.hero-tag-line{width:28px;height:1.5px;background:var(--gold-mid)}
+.hero-tag-text{font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold-mid)}
+.hero h1{font-family:'Lora',serif;font-size:32px;font-weight:600;line-height:1.15;color:#fff;margin-bottom:6px}
+.hero h1 em{font-style:italic;color:#D4C08A}
+.hero-subtitle{font-family:'Lora',serif;font-size:17px;font-weight:400;font-style:italic;color:rgba(255,255,255,.6);margin-bottom:24px}
+.hero-meta-list{list-style:none;margin-bottom:28px}
+.hero-meta-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75);margin-bottom:10px}
+.meta-diamond{width:6px;height:6px;background:var(--gold-mid);transform:rotate(45deg);flex-shrink:0}
+.hero-cta{display:inline-block;background:var(--gold-mid);color:var(--navy);font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:700;padding:13px 28px;border-radius:2px;border:none;cursor:pointer;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;transition:background .2s;width:100%;text-align:center}
+.hero-cta:active{background:#e8b520}
+.hero-bottom{border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:1fr 1fr}
+.hb-item{padding:14px 16px;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.hb-item:nth-child(2n){border-right:none}
+.hb-item:nth-child(3),.hb-item:nth-child(4){border-bottom:none}
+.hb-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:3px}
+.hb-val{font-family:'Lora',serif;font-size:17px;font-weight:500;color:rgba(255,255,255,.85)}
+.partner-strip{background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.07);padding:12px 20px}
+.partner-strip-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ps-label{font-size:10px;color:rgba(255,255,255,.28);letter-spacing:2px;text-transform:uppercase;width:100%}
+.ps-sep{display:none}
+.ps-name{font-size:12px;color:rgba(255,255,255,.55);font-weight:500;padding:4px 12px;border:1px solid rgba(255,255,255,.1);border-radius:2px}
+
+/* ── NAV ─────────────────────────── */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:980px;margin:0 auto;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-btn{padding:14px 16px;background:none;border:none;cursor:pointer;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:var(--text3);white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;letter-spacing:.5px;text-transform:uppercase;flex-shrink:0}
+.nav-btn.active,.nav-btn:hover{color:var(--navy);border-bottom-color:var(--gold-mid)}
+
+/* ── WRAPPER ─────────────────────── */
+.section{display:none}
+.section.active{display:block}
+.wrap{max-width:980px;margin:0 auto;padding:36px 20px}
+.section-tag{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.stag-line{width:20px;height:1.5px;background:var(--gold-mid)}
+.stag-text{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.sec-h{font-family:'Lora',serif;font-size:26px;font-weight:600;line-height:1.2;color:var(--navy);margin-bottom:10px}
+.sec-sub{font-size:15px;color:var(--text2);margin-bottom:32px;font-weight:400;line-height:1.75}
+.divider{height:1px;background:var(--border);margin:32px 0}
+
+/* ── OVERVIEW ────────────────────── */
+.intro-block{background:var(--cream2);border:1px solid var(--border);border-left:4px solid var(--gold-mid);border-radius:0 var(--r) var(--r) 0;padding:18px 20px;margin-bottom:24px}
+.intro-block p{font-family:'Lora',serif;font-size:17px;font-style:italic;color:var(--navy-mid);line-height:1.8}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.feat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px 16px}
+.feat-num{font-family:'Lora',serif;font-size:30px;font-weight:600;color:var(--border2);line-height:1;margin-bottom:6px}
+.feat-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.feat-desc{font-size:13px;color:var(--text2);line-height:1.6}
+.ai-box{background:var(--navy);border-radius:var(--r);padding:20px;display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
+.ai-mark{font-family:'Lora',serif;font-size:36px;font-weight:600;color:var(--gold-mid);line-height:1;flex-shrink:0;width:44px;text-align:center;margin-top:2px}
+.ai-title{font-family:'Lora',serif;font-size:17px;font-weight:500;color:#fff;margin-bottom:4px;line-height:1.3}
+.ai-sub{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
+.cta-center{text-align:center;margin-top:8px}
+.cta-center .hero-cta{width:auto;display:inline-block}
+
+/* ── PILLARS ─────────────────────── */
+.pillar-list{display:grid;gap:10px}
+.pillar-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px 16px;display:flex;gap:14px;align-items:flex-start}
+.p-numeral{font-family:'Lora',serif;font-size:32px;font-weight:600;color:var(--cream3);line-height:1;flex-shrink:0;width:36px;margin-top:-2px}
+.p-name{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:5px;line-height:1.2}
+.p-desc{font-size:13px;color:var(--text2);line-height:1.65}
+.p-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-top:7px}
+.tag-a{background:var(--gold-light);color:var(--gold)}
+.tag-b{background:var(--navy-light);color:var(--navy-mid)}
+
+/* ── SCHEDULE ────────────────────── */
+.day-wrap{margin-bottom:36px}
+.day-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.day-num{font-family:'Lora',serif;font-size:13px;font-weight:600;color:var(--white);background:var(--navy);padding:5px 12px;border-radius:2px;letter-spacing:.5px}
+.day-name{font-family:'Lora',serif;font-size:16px;font-weight:500;color:var(--navy)}
+/* Mobile schedule: stacked cards instead of table */
+.sched-table{width:100%;border-collapse:collapse;display:block}
+.sched-table thead{display:none}
+.sched-table tbody{display:flex;flex-direction:column;gap:8px}
+.sched-table tr{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+.sched-table tr.highlight-row{background:var(--cream2)}
+.sched-table tr.evening-row{background:var(--gold-light)}
+.sched-table td{display:block;padding:0;border:none}
+.td-time{font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;margin-bottom:4px;width:auto;padding-top:0}
+.td-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.td-sub{font-size:13px;color:var(--text2)}
+.td-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 9px;border-radius:2px;margin-top:6px}
+
+/* ── FACILITIES ──────────────────── */
+.fac-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:24px}
+.fac-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;gap:14px}
+.fac-initial{width:38px;height:38px;border-radius:var(--r-sm);background:var(--navy);color:var(--gold-mid);font-family:'Lora',serif;font-size:18px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fac-t{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.fac-d{font-size:13px;color:var(--text2);line-height:1.55}
+.kit-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.kit-tag{background:var(--cream2);border:1px solid var(--border);border-radius:2px;padding:6px 12px;font-size:12px;font-weight:600;color:var(--navy)}
+.cert-banner{background:var(--navy);border-radius:var(--r);padding:20px;display:flex;gap:16px;align-items:center}
+.cert-seal{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold-mid);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--gold-mid);flex-shrink:0}
+.cert-title{font-family:'Lora',serif;font-size:17px;font-weight:600;color:#fff;margin-bottom:3px}
+.cert-sub{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
+
+/* ── REGISTER ────────────────────── */
+.reg-layout{display:grid;grid-template-columns:1fr;gap:20px}
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px 18px}
+.field-pair{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:12px}
+.field-single{margin-bottom:12px}
+.f-label{display:block;font-size:11px;font-weight:700;color:var(--text3);margin-bottom:6px;letter-spacing:1px;text-transform:uppercase}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--r-sm);font-family:'Source Sans 3',sans-serif;font-size:16px;color:var(--text);background:var(--cream);transition:border-color .2s;outline:none;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{border-color:var(--navy);background:var(--white)}
+.f-section-head{font-family:'Lora',serif;font-size:17px;font-weight:600;color:var(--navy);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.submit-btn{width:100%;padding:15px;background:var(--navy);color:#fff;border:none;border-radius:var(--r-sm);font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:background .2s;letter-spacing:.5px;text-transform:uppercase}
+.submit-btn:active{background:var(--navy-mid)}
+.submit-btn:disabled{background:#aaa;cursor:not-allowed}
+.status-msg{padding:12px 14px;border-radius:var(--r-sm);font-size:14px;margin-top:10px;display:none;line-height:1.5}
+.status-msg.error{background:#FFF0F0;color:var(--red);border:1px solid #f5c0c0}
+.status-msg.loading{background:var(--navy-light);color:var(--navy);border:1px solid #C5CFE8}
+.side-card{background:var(--cream2);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.side-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.side-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+.side-item:last-child{margin-bottom:0}
+.side-bullet{width:5px;height:5px;background:var(--gold-mid);border-radius:50%;margin-top:8px;flex-shrink:0}
+.side-text{font-size:14px;color:var(--text2);line-height:1.55}
+.side-text strong{color:var(--navy);font-weight:600}
+.success-box{display:none;text-align:center;padding:48px 16px}
+.success-seal{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold-mid);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'Lora',serif;font-size:28px;color:var(--gold-mid)}
+.success-box h2{font-family:'Lora',serif;font-size:26px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.success-box p{color:var(--text2);font-size:14px;line-height:1.7}
+.reset-btn{display:inline-block;margin-top:20px;padding:12px 24px;background:transparent;color:var(--navy);border:1.5px solid var(--navy);border-radius:var(--r-sm);font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.5px;text-transform:uppercase}
+
+footer{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:24px 20px;font-size:12px;letter-spacing:.5px;margin-top:60px;line-height:1.8}
+footer span{color:rgba(255,255,255,.2);margin:0 8px}
+
+/* ── TABLET 600px+ ─────────────── */
+@media(min-width:600px){
+  .hero-inner{padding:52px 36px 44px}
+  .hero h1{font-size:44px}
+  .hero-subtitle{font-size:20px}
+  .hero-cta{width:auto;display:inline-block}
+  .hero-watermark{font-size:160px}
+  .hero-bottom{grid-template-columns:repeat(4,1fr)}
+  .hb-item{border-bottom:none}
+  .hb-item:nth-child(2n){border-right:1px solid rgba(255,255,255,.08)}
+  .hb-item:last-child{border-right:none}
+  .hb-val{font-size:19px}
+  .partner-strip{padding:14px 36px}
+  .ps-label{width:auto}
+  .ps-sep{display:block}
+  .wrap{padding:48px 36px}
+  .sec-h{font-size:34px}
+  .intro-block{padding:22px 26px}
+  .intro-block p{font-size:18px}
+  .feature-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .fac-grid{grid-template-columns:repeat(2,1fr)}
+  .field-pair{grid-template-columns:1fr 1fr}
+  .form-card{padding:28px}
+  .sched-table{display:table}
+  .sched-table tbody{display:table-row-group;flex-direction:unset;gap:0}
+  .sched-table tr{display:table-row;flex-direction:unset;background:transparent;border:none;border-radius:0;padding:0;border-bottom:1px solid var(--border)}
+  .sched-table tr.highlight-row{background:var(--cream2)}
+  .sched-table tr.evening-row{background:var(--gold-light)}
+  .sched-table tr:last-child{border-bottom:none}
+  .sched-table td{display:table-cell;padding:14px 16px;vertical-align:top}
+  .td-time{font-size:12px;white-space:nowrap;width:80px;padding-top:16px;margin-bottom:0}
+}
+
+/* ── DESKTOP 900px+ ─────────────── */
+@media(min-width:900px){
+  .hero-inner{padding:64px 48px 56px}
+  .hero-top-row{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:32px}
+  .hero-right{display:block;flex-shrink:0}
+  .hero-left{flex:1;min-width:280px}
+  .hero h1{font-size:58px}
+  .hero-subtitle{font-size:22px}
+  .hero-watermark{font-size:200px;right:-40px}
+  .partner-strip{padding:14px 48px}
+  .wrap{padding:60px 48px}
+  .sec-h{font-size:42px}
+  .sec-sub{max-width:560px}
+  .feature-grid{grid-template-columns:repeat(4,1fr)}
+  .fac-grid{grid-template-columns:repeat(3,1fr)}
+  .reg-layout{grid-template-columns:1fr 300px}
+  .form-card{padding:36px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-accent-line"></div>
+  <div class="hero-watermark">CHAI</div>
+  <div class="hero-inner">
+    <div class="hero-top-row">
+      <div class="hero-left">
+        <div class="hero-event-tag">
+          <div class="hero-tag-line"></div>
+          <div class="hero-tag-text">Management Development Programme</div>
+        </div>
+        <h1>Leading with<br/><em>Patient Centricity</em></h1>
+        <p class="hero-subtitle">A Leadership Retreat for CHAI Hospital Network</p>
+        <ul class="hero-meta-list">
+          <li><div class="meta-diamond"></div>22 – 23 April 2026 &nbsp;|&nbsp; IIM Kozhikode</li>
+          <li><div class="meta-diamond"></div>Management Development Centre, Calicut</li>
+          <li><div class="meta-diamond"></div>Full accommodation, boarding &amp; travel included</li>
+          <li><div class="meta-diamond"></div>Certificate issued by IIM Kozhikode</li>
+        </ul>
+        <button class="hero-cta" onclick="showSection('register')">Register for the Programme</button>
+      </div>
+      <div class="hero-right">
+        <div class="hero-date-card">
+          <div class="hdc-month">April</div>
+          <div class="hdc-day">22</div>
+          <div class="hdc-to">to</div>
+          <div class="hdc-day2">23</div>
+          <div class="hdc-year">2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="hb-item"><div class="hb-label">Duration</div><div class="hb-val">Two Days</div></div>
+    <div class="hb-item"><div class="hb-label">Format</div><div class="hb-val">Residential</div></div>
+    <div class="hb-item"><div class="hb-label">Venue</div><div class="hb-val">IIM Kozhikode</div></div>
+    <div class="hb-item"><div class="hb-label">Certificate</div><div class="hb-val">IIMK Issued</div></div>
+  </div>
+  <div class="partner-strip">
+    <div class="partner-strip-inner">
+      <div class="ps-label">Organised by</div>
+      <div class="ps-sep"></div>
+      <div class="ps-name">IIM Kozhikode</div>
+      <div class="ps-name">Caritas Hospital &amp; CHAI</div>
+      <div class="ps-name">QuidelOrtho</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showSection('overview')">Overview</button>
+    <button class="nav-btn" onclick="showSection('pillars')">Programme</button>
+    <button class="nav-btn" onclick="showSection('schedule')">Schedule</button>
+    <button class="nav-btn" onclick="showSection('facilities')">Facilities</button>
+    <button class="nav-btn" onclick="showSection('register')">Register</button>
+  </div>
+</nav>
+
+<!-- OVERVIEW -->
+<div id="sec-overview" class="section active">
+  <div class="wrap">
+    <div class="section-tag"><div class="stag-line"></div><div class="stag-text">About the Programme</div></div>
+    <h2 class="sec-h">A retreat designed for healthcare leaders</h2>
+    <p class="sec-sub">Bringing together the academic excellence of IIM Kozhikode and the deep industry experience of QuidelOrtho — exclusively for senior leaders across the CHAI Hospitals Network.</p>
+
+    <div class="intro-block">
+      <p>"This two-day programme offers healthcare leaders a rare opportunity to pause, reflect, and reconnect with the principles of patient-centred care — within a structured academic setting shaped for mission hospitals."</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feat-card">
+        <div class="feat-num">I</div>
+        <div class="feat-title">Tailored for Mission Hospitals</div>
+        <div class="feat-desc">Every session draws on real-world examples relevant to faith-based and mission-driven healthcare — not generic corporate frameworks.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">II</div>
+        <div class="feat-title">Academic Rigour</div>
+        <div class="feat-desc">Faculty from IIM Kozhikode bring structured, evidence-based perspectives on leadership, quality, and strategy.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">III</div>
+        <div class="feat-title">Industry Expertise</div>
+        <div class="feat-desc">QuidelOrtho brings deep healthcare industry insights alongside faculty sessions for a well-rounded learning experience.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">IV</div>
+        <div class="feat-title">Peer Networking</div>
+        <div class="feat-desc">Connect and exchange with senior leaders from across the CHAI network — in a warm, collegial residential setting.</div>
+      </div>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-mark">AI</div>
+      <div>
+        <div class="ai-title">Special Module: Digital Transformation &amp; AI in Healthcare</div>
+        <div class="ai-sub">A dedicated session on navigating emerging technologies — with practical, grounded guidance for mission hospital leadership.</div>
+      </div>
+    </div>
+
+    <div class="cta-center">
+      <button class="hero-cta" onclick="showSection('register')" style="border-radius:var(--r-sm)">Register for the Programme</button>
+    </div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<div id="sec-pillars" class="section">
+  <div class="wrap">
+    <div class="section-tag"><div class="stag-line"></div><div class="stag-text">Programme Structure</div></div>
+    <h2 class="sec-h">Four pillars of leadership excellence</h2>
+    <p class="sec-sub">Each module is designed to build a distinct leadership capability — together, they form a complete foundation for patient-centred hospital leadership.</p>
+    <div class="pillar-list">
+      <div class="pillar-item">
+        <div class="p-numeral">I</div>
+        <div>
+          <div class="p-name">Patient Experience &amp; Customer Centricity</div>
+          <div class="p-desc">Focus on creating lasting value and reducing patient anxiety. Build service frameworks that reflect the dignity and care at the heart of your hospital's mission.</div>
+          <div class="p-tag tag-a">IIM Faculty</div>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="p-numeral">II</div>
+        <div>
+          <div class="p-name">Quality &amp; Service Excellence</div>
+          <div class="p-desc">Master quality standards and benchmarking essential for maintaining safety, dignity, and trust — with practical tools applicable to mission hospital settings.</div>
+          <div class="p-tag tag-b">Industry Insights</div>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="p-numeral">III</div>
+        <div>
+          <div class="p-name">Financial Grounding for Leaders</div>
+          <div class="p-desc">Develop the financial literacy to ask the right strategic questions — sustainability dashboards and controls designed specifically for mission hospital priorities.</div>
+          <div class="p-tag tag-a">IIM Faculty</div>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="p-numeral">IV</div>
+        <div>
+          <div class="p-name">Strategic Orientation &amp; Leadership</div>
+          <div class="p-desc">Navigate trade-offs with clarity, build actionable roadmaps, and develop the strategic confidence to lead through modern healthcare challenges.</div>
+          <div class="p-tag tag-b">Industry Insights</div>
+        </div>
+      </div>
+    </div>
+    <div class="ai-box" style="margin-top:16px">
+      <div class="ai-mark" style="font-size:36px">+</div>
+      <div>
+        <div class="ai-title">Digital Transformation &amp; AI in Healthcare</div>
+        <div class="ai-sub">A focused special module on AI trends, digital tools, and practical roadmaps — grounded in the realities of mission hospital leadership.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div id="sec-schedule" class="section">
+  <div class="wrap">
+    <div class="section-tag"><div class="stag-line"></div><div class="stag-text">Programme Schedule</div></div>
+    <h2 class="sec-h">Two days at IIM Kozhikode</h2>
+    <p class="sec-sub">22 &amp; 23 April 2026 — Management Development Centre, IIM Kozhikode, Calicut.</p>
+
+    <div class="day-wrap">
+      <div class="day-head">
+        <div class="day-num">Day One</div>
+        <div class="day-name">Wednesday, 22 April 2026</div>
+      </div>
+      <table class="sched-table">
+        <tr>
+          <td class="td-time">9:00 am</td>
+          <td><div class="td-title">Registration &amp; Welcome Address</div><div class="td-sub">Arrival, programme kit distribution, and opening remarks</div></td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="td-time">10:00 am</td>
+          <td><div class="td-title">Pillar I — Patient Experience &amp; Customer Centricity</div><div class="td-sub">Creating lasting value and reducing patient anxiety in mission hospitals</div><div class="td-tag tag-a">IIM Faculty Session</div></td>
+        </tr>
+        <tr>
+          <td class="td-time">12:30 pm</td>
+          <td><div class="td-title">Lunch</div><div class="td-sub">Networking lunch at MDP Centre</div></td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="td-time">2:00 pm</td>
+          <td><div class="td-title">Pillar II — Quality &amp; Service Excellence</div><div class="td-sub">Standards, benchmarking, and practical tools for mission-driven care</div><div class="td-tag tag-b">Industry Insights</div></td>
+        </tr>
+        <tr>
+          <td class="td-time">4:30 pm</td>
+          <td><div class="td-title">Tea &amp; Refreshments</div></td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="td-time">5:00 pm</td>
+          <td><div class="td-title">Special Module — Digital Transformation &amp; AI in Healthcare</div><div class="td-sub">Practical roadmaps for navigating AI in mission hospital settings</div><div class="td-tag" style="background:var(--navy-light);color:var(--navy-mid)">Special Session</div></td>
+        </tr>
+        <tr class="evening-row">
+          <td class="td-time">7:30 pm</td>
+          <td><div class="td-title">Cultural Programme &amp; Gala Dinner</div><div class="td-sub">A special evening of celebration, culture, and fellowship</div><div class="td-tag tag-a">Evening Event</div></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="day-wrap">
+      <div class="day-head">
+        <div class="day-num" style="background:var(--gold-mid)">Day Two</div>
+        <div class="day-name">Thursday, 23 April 2026</div>
+      </div>
+      <table class="sched-table">
+        <tr class="highlight-row">
+          <td class="td-time">9:00 am</td>
+          <td><div class="td-title">Pillar III — Financial Grounding for Leaders</div><div class="td-sub">Mission sustainability dashboards, financial controls, and strategic questioning</div><div class="td-tag tag-a">IIM Faculty Session</div></td>
+        </tr>
+        <tr>
+          <td class="td-time">11:30 am</td>
+          <td><div class="td-title">Tea &amp; Refreshments</div></td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="td-time">12:00 pm</td>
+          <td><div class="td-title">Pillar IV — Strategic Orientation &amp; Leadership</div><div class="td-sub">Trade-offs, roadmaps, and actionable plans for modern hospital leadership</div><div class="td-tag tag-b">Industry Insights</div></td>
+        </tr>
+        <tr>
+          <td class="td-time">1:30 pm</td>
+          <td><div class="td-title">Lunch</div></td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="td-time">2:30 pm</td>
+          <td><div class="td-title">Group Presentations &amp; Strategic Action Planning</div><div class="td-sub">Participants present hospital-specific insights and action plans</div></td>
+        </tr>
+        <tr class="evening-row">
+          <td class="td-time">4:00 pm</td>
+          <td><div class="td-title">Certificate Ceremony &amp; Valedictory</div><div class="td-sub">Certificates duly signed by Programme Coordinator, MDP Chairperson &amp; Director — IIM Kozhikode</div><div class="td-tag tag-a">Closing Ceremony</div></td>
+        </tr>
+        <tr>
+          <td class="td-time">5:00 pm</td>
+          <td><div class="td-title">Departure</div><div class="td-sub">Travel arrangements from IIM Kozhikode provided</div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- FACILITIES -->
+<div id="sec-facilities" class="section">
+  <div class="wrap">
+    <div class="section-tag"><div class="stag-line"></div><div class="stag-text">Facilities &amp; Inclusions</div></div>
+    <h2 class="sec-h">Everything arranged for you</h2>
+    <p class="sec-sub">Your accommodation, meals, travel, and learning materials are all taken care of — so you can focus entirely on the programme.</p>
+    <div class="fac-grid">
+      <div class="fac-card">
+        <div class="fac-initial">H</div>
+        <div><div class="fac-t">Accommodation</div><div class="fac-d">Fully air-conditioned rooms at <strong>Hotel Gokuldam Grand, Calicut</strong> — a quality hotel arranged as IIM campus accommodation is fully booked.</div></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-initial">T</div>
+        <div><div class="fac-t">Travel</div><div class="fac-d">Complimentary transportation provided between the hotel and IIM Kozhikode MDP Centre each day.</div></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-initial">B</div>
+        <div><div class="fac-t">Full Boarding</div><div class="fac-d">All meals included — Breakfast, Lunch, Dinner, and Refreshments throughout both days of the programme.</div></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-initial">W</div>
+        <div><div class="fac-t">Wi-Fi Internet</div><div class="fac-d">High-speed internet connectivity available at both the hotel and the IIM campus throughout your stay.</div></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-initial">C</div>
+        <div><div class="fac-t">Cultural Evening</div><div class="fac-d">A special cultural programme with Gala Dinner is arranged on the evening of Day One.</div></div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-initial">M</div>
+        <div><div class="fac-t">Study Materials</div><div class="fac-d">Selected reference materials provided to take home for continued learning and application.</div></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="section-tag" style="margin-bottom:12px"><div class="stag-line"></div><div class="stag-text">Programme Kit</div></div>
+    <div class="kit-row">
+      <div class="kit-tag">Water Bottle</div>
+      <div class="kit-tag">Branded Bag</div>
+      <div class="kit-tag">T-Shirt</div>
+      <div class="kit-tag">Note Pad &amp; Pen</div>
+      <div class="kit-tag">Certificate of Participation</div>
+    </div>
+    <div class="cert-banner">
+      <div class="cert-seal">&#10022;</div>
+      <div>
+        <div class="cert-title">Certificate of Participation</div>
+        <div class="cert-sub">Duly signed by the Programme Coordinator, MDP Chairperson, and Director — IIM Kozhikode</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div id="sec-register" class="section">
+  <div class="wrap">
+    <div class="section-tag"><div class="stag-line"></div><div class="stag-text">Registration</div></div>
+    <h2 class="sec-h">Register for the Programme</h2>
+    <p class="sec-sub">22 &amp; 23 April 2026 — IIM Kozhikode. Kindly complete the form below to secure your place.</p>
+
+    <div class="reg-layout">
+      <div>
+        <div class="form-card" id="formWrap">
+
+          <div class="f-section-head">Personal Details</div>
+          <div class="field-pair">
+            <div>
+              <label class="f-label">Full Name *</label>
+              <input type="text" id="f-name" placeholder="Dr. / Sr. / Fr. Name"/>
+            </div>
+            <div>
+              <label class="f-label">Designation *</label>
+              <input type="text" id="f-desig" placeholder="e.g. Medical Director"/>
+            </div>
+          </div>
+          <div class="field-pair">
+            <div>
+              <label class="f-label">Email Address *</label>
+              <input type="email" id="f-email" placeholder="you@hospital.org"/>
+            </div>
+            <div>
+              <label class="f-label">Phone Number *</label>
+              <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX"/>
+            </div>
+          </div>
+          <div class="f-section-head">Hospital Details</div>
+          <div class="field-single">
+            <label class="f-label">Hospital / Organisation *</label>
+            <input type="text" id="f-hospital" placeholder="e.g. Caritas Hospital, Kottayam"/>
+          </div>
+          <button class="submit-btn" id="submitBtn" onclick="submitForm()">Submit Registration</button>
+          <div class="status-msg" id="statusMsg"></div>
+          <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:14px;line-height:1.6">For enquiries, please write to<br/><a href="mailto:directorsecretary@caritashospital.org" style="color:var(--navy)">directorsecretary@caritashospital.org</a></p>
+        </div>
+        <div class="success-box" id="successBox">
+          <div class="success-seal">&#10022;</div>
+          <h2>Registration Received</h2>
+          <p>Thank you. The CHAI team will be in touch shortly with your confirmation and further programme details.</p>
+          <p style="margin-top:10px;font-size:13px;color:var(--text3)">directorsecretary@caritashospital.org</p>
+          <button class="reset-btn" onclick="resetForm()">Register Another Participant</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="side-card">
+          <div class="side-title">What is included</div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Two-day residential programme</strong> at IIM Kozhikode MDP Centre</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Accommodation</strong> at Hotel Gokuldam Grand, Calicut (fully AC)</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Full boarding</strong> — all meals and refreshments</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Daily transport</strong> between hotel and campus</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Programme kit</strong> — bag, T-shirt, water bottle, notepad &amp; pen</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>IIM Kozhikode Certificate</strong> signed by Director &amp; MDP Chairperson</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Cultural evening</strong> with Gala Dinner on Day One</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Study materials</strong> for future reference</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Leading with Patient Centricity
+  <span>·</span>
+  IIM Kozhikode × CHAI × QuidelOrtho
+  <span>·</span>
+  22 – 23 April 2026
+</footer>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>{if(b.getAttribute('onclick').includes("'"+id+"'"))b.classList.add('active')});
+  document.querySelector('nav').scrollIntoView({behavior:'smooth'});
+}
+async function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const desig=document.getElementById('f-desig').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const hospital=document.getElementById('f-hospital').value.trim();
+  if(!name||!desig||!email||!phone||!hospital){showStatus('Please fill in all required fields.','error');return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showStatus('Please enter a valid email address.','error');return}
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbwo9GU1WVBscK6j3DhiJ1pJtIUCP8oIxJrnOIvxvglTVp7Tpn_TO91o1skEXr0F9rh9/exec';
+  const data={name,designation:desig,email,phone,hospital};
+  document.getElementById('submitBtn').disabled=true;
+  showStatus('Submitting your registration…','loading');
+  try{
+    await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    document.getElementById('formWrap').style.display='none';
+    document.getElementById('successBox').style.display='block';
+  }catch(e){
+    showStatus('Submission failed. Please email directorsecretary@caritashospital.org directly.','error');
+    document.getElementById('submitBtn').disabled=false;
+  }
+}
+function showStatus(msg,type){const el=document.getElementById('statusMsg');el.textContent=msg;el.className='status-msg '+type;el.style.display='block'}
+function resetForm(){
+  document.getElementById('formWrap').style.display='block';
+  document.getElementById('successBox').style.display='none';
+  document.getElementById('submitBtn').disabled=false;
+  document.getElementById('statusMsg').style.display='none';
+  ['f-name','f-desig','f-email','f-phone','f-hospital'].forEach(id=>document.getElementById(id).value='');
+}
+</script>
+</body>
+</html>
