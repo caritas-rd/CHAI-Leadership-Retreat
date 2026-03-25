@@ -76,7 +76,7 @@ nav{background:var(--white);border-bottom:1px solid var(--border);position:stick
 .feat-desc{font-size:13px;color:var(--text2);line-height:1.6}
 .ai-box{background:var(--navy);border-radius:var(--r);padding:20px;display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
 .ai-mark{font-family:'Lora',serif;font-size:36px;font-weight:600;color:var(--gold-mid);line-height:1;flex-shrink:0;width:44px;text-align:center;margin-top:2px}
-.ai-title{font-family:'Lora',serif;font-size:17px;font-weight:500;color:#fff;margin-bottom:4px;line-height:1.3}
+.ai-title{font-family:'Lora',serif;font-size:17px;font-weight:500;color:#fff;margin-bottom:4px;line-height:1.3;align-items:center}
 .ai-sub{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
 .cta-center{text-align:center;margin-top:8px}
 .cta-center .hero-cta{width:auto;display:inline-block}
@@ -244,15 +244,6 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
         </ul>
         <button class="hero-cta" onclick="showSection('register')">Register for the Programme</button>
       </div>
-      <div class="hero-right">
-        <div class="hero-date-card">
-          <div class="hdc-month">April</div>
-          <div class="hdc-day">22</div>
-          <div class="hdc-to">to</div>
-          <div class="hdc-day2">23</div>
-          <div class="hdc-year">2026</div>
-        </div>
-      </div>
     </div>
   </div>
   <div class="hero-bottom">
@@ -261,15 +252,6 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
     <div class="hb-item"><div class="hb-label">Venue</div><div class="hb-val">IIM Kozhikode</div></div>
     <div class="hb-item"><div class="hb-label">Certificate</div><div class="hb-val">IIMK Issued</div></div>
   </div>
-  <div class="partner-strip">
-    <div class="partner-strip-inner">
-      <div class="ps-label">Organised by</div>
-      <div class="ps-sep"></div>
-      <div class="ps-name">IIM Kozhikode</div>
-      <div class="ps-name">Caritas Hospital &amp; CHAI</div>
-      <div class="ps-name">QuidelOrtho</div>
-    </div>
-  </div>
 </div>
 
 <!-- NAV -->
@@ -277,7 +259,7 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
   <div class="nav-inner">
     <button class="nav-btn active" onclick="showSection('overview')">Overview</button>
     <button class="nav-btn" onclick="showSection('pillars')">Programme</button>
-    <button class="nav-btn" onclick="showSection('schedule')">Schedule</button>
+    <!-- <button class="nav-btn" onclick="showSection('schedule')">Schedule</button> -->
     <button class="nav-btn" onclick="showSection('facilities')">Facilities</button>
     <button class="nav-btn" onclick="showSection('register')">Register</button>
   </div>
@@ -297,31 +279,26 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
     <div class="feature-grid">
       <div class="feat-card">
         <div class="feat-num">I</div>
-        <div class="feat-title">Tailored for Mission Hospitals</div>
-        <div class="feat-desc">Every session draws on real-world examples relevant to faith-based and mission-driven healthcare — not generic corporate frameworks.</div>
+        <div class="feat-title">Practical Learning for Mission Hospitals</div>
+        <div class="feat-desc">Draw on highly practical, real-world examples and stories tailored specifically to mission hospitals and faith-based healthcare settings.</div>
       </div>
+
       <div class="feat-card">
         <div class="feat-num">II</div>
-        <div class="feat-title">Academic Rigour</div>
-        <div class="feat-desc">Faculty from IIM Kozhikode bring structured, evidence-based perspectives on leadership, quality, and strategy.</div>
+        <div class="feat-title">Financial Controls & Sustainability Dashboards</div>
+        <div class="feat-desc">Learn essential financial controls and customized dashboards designed for mission sustainability — not generic corporate finance ratios.</div>
       </div>
+
       <div class="feat-card">
         <div class="feat-num">III</div>
-        <div class="feat-title">Industry Expertise</div>
-        <div class="feat-desc">QuidelOrtho brings deep healthcare industry insights alongside faculty sessions for a well-rounded learning experience.</div>
+        <div class="feat-title">Digital Transformation & AI Readiness</div>
+        <div class="feat-desc">Explore a special module focused on digital transformation, emerging healthcare technologies, and AI trends shaping the future of care.</div>
       </div>
+
       <div class="feat-card">
         <div class="feat-num">IV</div>
-        <div class="feat-title">Peer Networking</div>
-        <div class="feat-desc">Connect and exchange with senior leaders from across the CHAI network — in a warm, collegial residential setting.</div>
-      </div>
-    </div>
-
-    <div class="ai-box">
-      <div class="ai-mark">AI</div>
-      <div>
-        <div class="ai-title">Special Module: Digital Transformation &amp; AI in Healthcare</div>
-        <div class="ai-sub">A dedicated session on navigating emerging technologies — with practical, grounded guidance for mission hospital leadership.</div>
+        <div class="feat-title">Leadership Trade-offs & Action Roadmaps</div>
+        <div class="feat-desc">Develop clear trade-offs, practical roadmaps, and actionable plans to navigate today’s complex leadership and organizational challenges.</div>
       </div>
     </div>
 
@@ -343,7 +320,6 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
         <div>
           <div class="p-name">Patient Experience &amp; Customer Centricity</div>
           <div class="p-desc">Focus on creating lasting value and reducing patient anxiety. Build service frameworks that reflect the dignity and care at the heart of your hospital's mission.</div>
-          <div class="p-tag tag-a">IIM Faculty</div>
         </div>
       </div>
       <div class="pillar-item">
@@ -351,7 +327,6 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
         <div>
           <div class="p-name">Quality &amp; Service Excellence</div>
           <div class="p-desc">Master quality standards and benchmarking essential for maintaining safety, dignity, and trust — with practical tools applicable to mission hospital settings.</div>
-          <div class="p-tag tag-b">Industry Insights</div>
         </div>
       </div>
       <div class="pillar-item">
@@ -359,7 +334,6 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
         <div>
           <div class="p-name">Financial Grounding for Leaders</div>
           <div class="p-desc">Develop the financial literacy to ask the right strategic questions — sustainability dashboards and controls designed specifically for mission hospital priorities.</div>
-          <div class="p-tag tag-a">IIM Faculty</div>
         </div>
       </div>
       <div class="pillar-item">
@@ -367,15 +341,7 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
         <div>
           <div class="p-name">Strategic Orientation &amp; Leadership</div>
           <div class="p-desc">Navigate trade-offs with clarity, build actionable roadmaps, and develop the strategic confidence to lead through modern healthcare challenges.</div>
-          <div class="p-tag tag-b">Industry Insights</div>
         </div>
-      </div>
-    </div>
-    <div class="ai-box" style="margin-top:16px">
-      <div class="ai-mark" style="font-size:36px">+</div>
-      <div>
-        <div class="ai-title">Digital Transformation &amp; AI in Healthcare</div>
-        <div class="ai-sub">A focused special module on AI trends, digital tools, and practical roadmaps — grounded in the realities of mission hospital leadership.</div>
       </div>
     </div>
   </div>
@@ -473,19 +439,15 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
     <div class="fac-grid">
       <div class="fac-card">
         <div class="fac-initial">H</div>
-        <div><div class="fac-t">Accommodation</div><div class="fac-d">Fully air-conditioned rooms at <strong>Hotel Gokuldam Grand, Calicut</strong> — a quality hotel arranged as IIM campus accommodation is fully booked.</div></div>
+        <div><div class="fac-t">Accommodation</div><div class="fac-d">Fully air-conditioned rooms</div></div>
       </div>
       <div class="fac-card">
         <div class="fac-initial">T</div>
-        <div><div class="fac-t">Travel</div><div class="fac-d">Complimentary transportation provided between the hotel and IIM Kozhikode MDP Centre each day.</div></div>
+        <div><div class="fac-t">Travel</div><div class="fac-d">Complimentary transportation provided.</div></div>
       </div>
       <div class="fac-card">
         <div class="fac-initial">B</div>
         <div><div class="fac-t">Full Boarding</div><div class="fac-d">All meals included — Breakfast, Lunch, Dinner, and Refreshments throughout both days of the programme.</div></div>
-      </div>
-      <div class="fac-card">
-        <div class="fac-initial">W</div>
-        <div><div class="fac-t">Wi-Fi Internet</div><div class="fac-d">High-speed internet connectivity available at both the hotel and the IIM campus throughout your stay.</div></div>
       </div>
       <div class="fac-card">
         <div class="fac-initial">C</div>
@@ -500,10 +462,9 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
     <div class="section-tag" style="margin-bottom:12px"><div class="stag-line"></div><div class="stag-text">Programme Kit</div></div>
     <div class="kit-row">
       <div class="kit-tag">Water Bottle</div>
-      <div class="kit-tag">Branded Bag</div>
+      <div class="kit-tag">Bag</div>
       <div class="kit-tag">T-Shirt</div>
       <div class="kit-tag">Note Pad &amp; Pen</div>
-      <div class="kit-tag">Certificate of Participation</div>
     </div>
     <div class="cert-banner">
       <div class="cert-seal">&#10022;</div>
@@ -554,12 +515,12 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
           </div>
           <button class="submit-btn" id="submitBtn" onclick="submitForm()">Submit Registration</button>
           <div class="status-msg" id="statusMsg"></div>
-          <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:14px;line-height:1.6">For enquiries, please write to<br/><a href="/cdn-cgi/l/email-protection#b9ddd0cbdcdacdd6cbcadcdacbdccdd8cbc0f9dad8cbd0cdd8cad1d6cac9d0cdd8d597d6cbde" style="color:var(--navy)"><span class="__cf_email__" data-cfemail="23474a514640574c5150464051465742515a634042514a5742504b4c50534a57424f0d4c5144">[email&#160;protected]</span></a></p>
+          <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:14px;line-height:1.6">For enquiries, please write to<br/><a href="directorsecretary@caritashospital.org" style="color:var(--navy)"><span class="__cf_email__" data-cfemail="23474a514640574c5150464051465742515a634042514a5742504b4c50534a57424f0d4c5144">[email&#160;protected]</span></a></p>
         </div>
         <div class="success-box" id="successBox">
           <div class="success-seal">&#10022;</div>
           <h2>Registration Received</h2>
-          <p>Thank you. The CHAI team will be in touch shortly with your confirmation and further programme details.</p>
+          <p>Thank you. The team will be in touch shortly with your confirmation and further programme details.</p>
           <p style="margin-top:10px;font-size:13px;color:var(--text3)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ffbf6edfafcebf0edecfafcedfaebfeede6dffcfeedf6ebfeecf7f0eceff6ebfef3b1f0edf8">[email&#160;protected]</a></p>
           <button class="reset-btn" onclick="resetForm()">Register Another Participant</button>
         </div>
@@ -569,9 +530,9 @@ footer span{color:rgba(255,255,255,.2);margin:0 8px}
         <div class="side-card">
           <div class="side-title">What is included</div>
           <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Two-day residential programme</strong> at IIM Kozhikode MDP Centre</div></div>
-          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Accommodation</strong> at Hotel Gokuldam Grand, Calicut (fully AC)</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Accommodation</strong></div></div>
           <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Full boarding</strong> — all meals and refreshments</div></div>
-          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Daily transport</strong> between hotel and campus</div></div>
+          <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Transportation</strong> </div></div>
           <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Programme kit</strong> — bag, T-shirt, water bottle, notepad &amp; pen</div></div>
           <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>IIM Kozhikode Certificate</strong> signed by Director &amp; MDP Chairperson</div></div>
           <div class="side-item"><div class="side-bullet"></div><div class="side-text"><strong>Cultural evening</strong> with Gala Dinner on Day One</div></div>
