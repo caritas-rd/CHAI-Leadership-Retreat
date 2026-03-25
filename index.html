@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Leading with Patient Centricity | CHAI × IIM Kozhikode</title>
+<title>Leading with Patient Centricity | Caritas Kottayam × IIM Kozhikode</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -606,7 +606,7 @@ async function submitForm(){
   const hospital=document.getElementById('f-hospital').value.trim();
   if(!name||!desig||!email||!phone||!hospital){showStatus('Please fill in all required fields.','error');return;}
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showStatus('Please enter a valid email address.','error');return;}
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbwo9GU1WVBscK6j3DhiJ1pJtIUCP8oIxJrnOIvxvglTVp7Tpn_TO91o1skEXr0F9rh9/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbyzvAVPZ5H1KpJhvB7p24SnxWrrUcAysJwLTNxvICC8Aldhnh1UC9I-XKRorQH4Sxo/exec';
   const data={name,designation:desig,email,phone,hospital};
   document.getElementById('submitBtn').disabled=true;
   showStatus('Submitting your registration\u2026','loading');
